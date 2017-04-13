@@ -1,0 +1,10 @@
+<div class="row">
+  <div class="col-md-2">
+    <%= simple_form_for :student do |f| %>
+        <%= f.input :name, placeholder: 'Name', class: 'form-control' %>
+        <%= f.input :last_name, placeholder: 'Last Name', class: 'form-control' %>
+        <%= f.collection_select :school_id, School.all.order(:name), :id, :name, {} , class: 'form-control' %>
+        <%= f.submit 'Update', class: 'btn btn-success' %>
+    <% end %>
+  </div>
+</div>
